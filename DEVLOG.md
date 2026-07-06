@@ -6,7 +6,7 @@ This file tracks the development process, log entries, milestones, and task chec
 
 ## 🚦 Quick Status
 * **Current Phase**: Phase 1 - Foundation & Project setup
-* **Overall Progress**: 10%
+* **Overall Progress**: 20%
 * **Last Updated**: 2026-07-06
 
 ---
@@ -18,7 +18,8 @@ This file tracks the development process, log entries, milestones, and task chec
 * [x] Create comprehensive `README.md` introducing the project and its 4 pillars
 * [x] Create `DEVLOG.md` to track milestones and tasks
 * [x] Design local-first state storage system with SQLite & Prisma ORM
-* [ ] Implement global dashboard layout with high-end dark mode aesthetics, sidebar navigation, and quick-action menu
+* [x] Implement global dashboard layout with high-end dark mode aesthetics, sidebar navigation, and quick-action menu
+* [x] Design and implement multi-project isolation architecture and project switcher dropdown
 * [ ] Integrate Gemini API / AI Logic client utility for generating data (Wiki, tickets, test scenarios)
 
 ### 📝 Phase 2: The Wiki Module (Confluence Lite)
@@ -69,3 +70,16 @@ This file tracks the development process, log entries, milestones, and task chec
   * Defined relational schema in `prisma/schema.prisma` covering models for Documents (Wiki), Canvases, Issues (Board), and TestScenarios/Steps/Runs/RunSteps (Laboratory).
   * Built global PrismaClient helper `lib/prisma.ts`.
   * Updated module nomenclature to official names: *The Wiki*, *Canvas*, *The Board*, and *The Laboratory*.
+* **Global Layout & Navigation**:
+  * Configured global Tailwind v4 properties, glassmorphism panel/card selectors, custom scrollbars, and helper classes in `globals.css`.
+  * Created client navigation sidebar component `components/Sidebar.tsx` displaying vector icons, active state styling, and AI Context Engine dashboard cards.
+  * Integrated sidebar into root layout shell `app/layout.tsx`.
+  * Created routing placeholder page stubs for `/wiki`, `/canvas`, `/board`, and `/laboratory`.
+  * Built the main Homepage dashboard `app/page.tsx` that dynamically queries workspace database counts (Wiki docs, Canvas boards, Board tickets completed/in progress, Laboratory runs passed/failed) and showcases interactive AI actions.
+* **Project Isolation & Onboarding Switcher**:
+  * Updated `prisma/schema.prisma` to include a new `Project` table and linked all primary entities (`Document`, `Canvas`, `Issue`, `TestScenario`) to it.
+  * Created Next.js Server Actions `app/actions.ts` for type-safe project selection via httpOnly cookies (`active_project_id`) and project creation.
+  * Built client dropdown switcher `components/ProjectSelector.tsx` for toggling projects and triggering new project creation modal screens.
+  * Built onboarding page screen overlay `components/OnboardingOverlay.tsx` to prompt users to initialize a project on first load.
+  * Updated `app/layout.tsx` to handle project switching and onboarding.
+  * Updated homepage dashboard `app/page.tsx` queries to segment metrics and recent lists by the active project ID.

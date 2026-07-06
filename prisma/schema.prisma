@@ -7,6 +7,18 @@ generator client {
   provider = "prisma-client-js"
 }
 
+model Project {
+  id            String         @id @default(uuid())
+  name          String
+  description   String?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  documents     Document[]
+  canvases      Canvas[]
+  issues        Issue[]
+  testScenarios TestScenario[]
+}
+
 model Document {
   id        String   @id @default(uuid())
   title     String
@@ -14,6 +26,8 @@ model Document {
   status    String   // "DRAFT", "APPROVED", "MANUALLY_EDITED", "REJECTED"
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  projectId String
+  project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
   issues    Issue[]
   canvases  Canvas[]
 }
@@ -24,6 +38,8 @@ model Canvas {
   data       String    // JSON string containing elements, shapes, positions
   createdAt  DateTime  @default(now())
   updatedAt  DateTime  @updatedAt
+  projectId  String
+  project    Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
   documentId String?
   document   Document? @relation(fields: [documentId], references: [id], onDelete: SetNull)
 }
@@ -37,6 +53,8 @@ model Issue {
   type          String         // "EPIC", "TASK", "BUG", "TEST_TASK"
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
+  projectId     String
+  project       Project        @relation(fields: [projectId], references: [id], onDelete: Cascade)
   documentId    String?
   document      Document?      @relation(fields: [documentId], references: [id], onDelete: SetNull)
   testScenarios TestScenario[]
@@ -49,6 +67,8 @@ model TestScenario {
   description String?
   createdAt   DateTime   @default(now())
   updatedAt   DateTime   @updatedAt
+  projectId   String
+  project     Project    @relation(fields: [projectId], references: [id], onDelete: Cascade)
   issueId     String?
   issue       Issue?     @relation(fields: [issueId], references: [id], onDelete: SetNull)
   steps       TestStep[]
