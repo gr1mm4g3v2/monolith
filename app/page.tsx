@@ -126,7 +126,7 @@ export default async function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
               </span>
-              <span className="text-[10px] uppercase font-mono text-zinc-500">Confluence Lite</span>
+              <span className="text-[10px] uppercase font-mono text-zinc-500">Documentation</span>
             </div>
             <div>
               <h2 className="text-lg font-bold text-zinc-100">The Wiki</h2>
@@ -150,7 +150,7 @@ export default async function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
               </span>
-              <span className="text-[10px] uppercase font-mono text-zinc-500">Figma Lite</span>
+              <span className="text-[10px] uppercase font-mono text-zinc-500">Design</span>
             </div>
             <div>
               <h2 className="text-lg font-bold text-zinc-100">The Canvas</h2>
@@ -174,7 +174,7 @@ export default async function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                 </svg>
               </span>
-              <span className="text-[10px] uppercase font-mono text-zinc-500">Jira Lite</span>
+              <span className="text-[10px] uppercase font-mono text-zinc-500">Tracking</span>
             </div>
             <div>
               <h2 className="text-lg font-bold text-zinc-100">The Board</h2>
@@ -209,7 +209,7 @@ export default async function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                 </svg>
               </span>
-              <span className="text-[10px] uppercase font-mono text-zinc-500">qTest Lite</span>
+              <span className="text-[10px] uppercase font-mono text-zinc-500">Testing</span>
             </div>
             <div>
               <h2 className="text-lg font-bold text-zinc-100">The Laboratory</h2>
@@ -316,7 +316,7 @@ export default async function HomePage() {
             </button>
             
             <button className="w-full text-left p-3.5 rounded-lg bg-zinc-900/80 border border-zinc-800 hover:border-cyan-500/50 hover:bg-zinc-800/40 transition group flex flex-col gap-1">
-              <span className="text-xs font-bold text-zinc-200 group-hover:text-cyan-400 transition">Extract Jira Tickets</span>
+              <span className="text-xs font-bold text-zinc-200 group-hover:text-cyan-400 transition">Extract Board Tickets</span>
               <span className="text-[10px] text-zinc-500">Convert Wiki specifications into tasks on The Board</span>
             </button>
             

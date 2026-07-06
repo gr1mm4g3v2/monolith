@@ -22,35 +22,35 @@ This file tracks the development process, log entries, milestones, and task chec
 * [x] Design and implement multi-project isolation architecture and project switcher dropdown
 * [ ] Integrate Gemini API / AI Logic client utility for generating data (Wiki, tickets, test scenarios)
 
-### 📝 Phase 2: The Wiki Module (Confluence Lite)
+### 📝 Phase 2: The Wiki Module
 * [ ] Build documentation listing page and detail editor page (markdown support)
 * [ ] Implement manual documentation creation and editing
 * [ ] Implement AI-assisted document generator (prompt to write PRD/spec docs)
 * [ ] Build the "AI Review Workflow" (Show AI draft -> allow edits -> approve/reject)
 * [ ] Support linking documents to The Board tasks and The Laboratory test scenarios
 
-### 📋 Phase 3: The Board Module (Jira Lite)
+### 📋 Phase 3: The Board Module
 * [ ] Build Kanban board & list views for managing tickets (Tasks, Bugs, Epics, E2E Test Tasks)
 * [ ] Build manual ticket creation forms
 * [ ] Implement AI ticket extractor (analyzes a Wiki document and generates recommended Kanban tasks)
 * [ ] Support manual editing, deletion, status columns drag-and-drop, and priority settings
 * [ ] Create E2E test task ticket types that tie directly to quality assurance runs
 
-### 🧪 Phase 4: The Laboratory Module (qTest Lite)
+### 🧪 Phase 4: The Laboratory Module
 * [ ] Build Test Case management dashboard (list, filter by requirements)
 * [ ] Implement manual test case creator (steps, expected results)
 * [ ] Implement AI test scenario generator (creates test cases automatically from Wiki PRDs or Board user stories)
 * [ ] Create "Test Run Runner" (interactive checklist to run tests, mark Pass/Fail for each step, write comments)
 * [ ] Implement auto-bug generation: when a test run fails, automatically create a Bug ticket on The Board linking back to the failed test run step
 
-### 🎨 Phase 5: The Canvas Module (Figma Lite - Optional)
+### 🎨 Phase 5: The Canvas Module (Optional)
 * [ ] Build infinite canvas component with basic vector shapes, text, and connector lines
 * [ ] Create a layout inspector (adjust sizes, position, colors, alignment)
 * [ ] Implement AI Canvas Generator (describe UI layout -> AI puts wireframe blocks on canvas)
 * [ ] Add linkage to Wiki docs and Board tickets (embed Canvas viewport or mock link)
 
 ### ✨ Phase 6: Integration, Polish & E2E Validation
-* [ ] Build full end-to-end flow: Wiki (PRD) -> AI -> Board (Jira Tickets) -> AI -> Tests (Scenarios) -> Run Tests -> Bug Creation
+* [ ] Build full end-to-end flow: Wiki (PRD) -> AI -> Board (Tickets) -> AI -> Tests (Scenarios) -> Run Tests -> Bug Creation
 * [ ] Polish visual aesthetics (rich transitions, dark/glassmorphic theme, micro-animations)
 * [ ] Add database backup/restore (JSON import/export)
 * [ ] Validate accessibility (a11y) and keyboard navigation
