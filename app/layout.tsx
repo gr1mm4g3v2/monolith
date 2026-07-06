@@ -21,7 +21,7 @@ export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Monolith — AI-Native Solo Dev Suite",
-  description: "Unified AI-driven workspace combining Wiki, Canvas, Board, and Laboratory.",
+  description: "Unified AI-driven workspace combining The Wiki, The Canvas, The Board, and The Laboratory.",
 };
 
 export default async function RootLayout({

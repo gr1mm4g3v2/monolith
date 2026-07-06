@@ -141,7 +141,7 @@ export default async function HomePage() {
           </div>
         </div>
 
-        {/* Pillar 2: Canvas */}
+        {/* Pillar 2: The Canvas */}
         <div className="glass-card rounded-xl p-6 flex flex-col justify-between min-h-[200px]">
           <div className="flex flex-col gap-4">
             <div className="flex items-center justify-between">
@@ -153,7 +153,7 @@ export default async function HomePage() {
               <span className="text-[10px] uppercase font-mono text-zinc-500">Figma Lite</span>
             </div>
             <div>
-              <h2 className="text-lg font-bold text-zinc-100">Canvas</h2>
+              <h2 className="text-lg font-bold text-zinc-100">The Canvas</h2>
               <p className="text-xs text-zinc-400 mt-1">Vector-based drawing board for whiteboard layouts.</p>
             </div>
           </div>

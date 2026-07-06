@@ -3,13 +3,13 @@ export default function CanvasPage() {
     <div className="flex flex-col gap-6 p-8">
       <div>
         <div className="text-sm text-zinc-500 mb-1">DESIGN</div>
-        <h1 className="text-3xl font-bold gradient-text">Canvas</h1>
+        <h1 className="text-3xl font-bold gradient-text">The Canvas</h1>
       </div>
       
       <div className="glass-card rounded-xl p-8 max-w-2xl">
-        <h2 className="text-xl font-semibold mb-4 text-zinc-200">Welcome to Canvas</h2>
+        <h2 className="text-xl font-semibold mb-4 text-zinc-200">Welcome to The Canvas</h2>
         <p className="text-zinc-400 mb-6 leading-relaxed">
-          Canvas is your simplified whiteboard and UI design visual editor. Draw diagrams, wireframes, 
+          The Canvas is your simplified whiteboard and UI design visual editor. Draw diagrams, wireframes, 
           and mock layouts. Connect shapes, add text, and let the AI assist you in converting layout concepts 
           into functional component wireframes.
         </p>

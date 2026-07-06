@@ -2,7 +2,7 @@
 
 **Monolith** is an AI-driven, unified software development suite designed specifically for solo developers and indie hackers. It streamlines product management, system design, documentation, and quality assurance into a single, cohesive, local-first application. 
 
-By consolidating the core capabilities of **The Wiki (Confluence), Canvas (Figma), The Board (Jira), and The Laboratory (qTest)** into simplified, interconnected workflows, Monolith acts as your AI co-pilot, letting you build, document, track, and test your applications without the overhead of heavy enterprise tools.
+By consolidating the core capabilities of **The Wiki (Confluence), The Canvas (Figma), The Board (Jira), and The Laboratory (qTest)** into simplified, interconnected workflows, Monolith acts as your AI co-pilot, letting you build, document, track, and test your applications without the overhead of heavy enterprise tools.
 
 ---
 
@@ -14,7 +14,7 @@ Monolith brings together four key pillars of software development, designed to f
 graph TD
     Wiki[📝 The Wiki - Confluence Lite] -->|Requirements| Board[📋 The Board - Jira Lite]
     Board -->|User Stories| Tests[🧪 The Laboratory - qTest Lite]
-    Canvas[🎨 Canvas - Figma Lite] -->|Mockups| Board
+    Canvas[🎨 The Canvas - Figma Lite] -->|Mockups| Board
     Canvas -->|Layouts| Wiki
     Tests -->|Failed Runs / Bugs| Board
     
@@ -30,7 +30,7 @@ graph TD
 * **Review & Approve**: The AI generates documentation drafts which you can edit, reject, or approve with one click.
 * **Dynamic Linking**: Tag tasks or test scenarios directly inside your documents.
 
-### 2. 🎨 Canvas (Figma Lite - Optional)
+### 2. 🎨 The Canvas (Figma Lite - Optional)
 *Interactive UI/UX design and whiteboard layouts.*
 * **Simplified Elements**: Draw layouts, mockups, flowcharts, or wireframes with a clean, vector-based canvas.
 * **AI-Guided UI Generator**: Describe a component or page to the AI, and have it auto-generate layout wireframes, color schemes, or component structures directly on the Canvas.
@@ -70,7 +70,7 @@ Monolith is built using modern, fast, and light web technologies optimized for l
 * **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
 * **Database**: SQLite (local database file)
 * **ORM**: Prisma ORM for schema modeling and type-safe database queries
-* **Visuals / Canvas**: SVGs and HTML5 Canvas APIs for Canvas visual components.
+* **Visuals / The Canvas**: SVGs and HTML5 Canvas APIs for The Canvas visual components.
 * **AI Core**: Local SDK configuration connecting to LLM providers (Google Gemini / Antigravity).
 
 ---

@@ -43,7 +43,7 @@ This file tracks the development process, log entries, milestones, and task chec
 * [ ] Create "Test Run Runner" (interactive checklist to run tests, mark Pass/Fail for each step, write comments)
 * [ ] Implement auto-bug generation: when a test run fails, automatically create a Bug ticket on The Board linking back to the failed test run step
 
-### 🎨 Phase 5: Canvas Module (Figma Lite - Optional)
+### 🎨 Phase 5: The Canvas Module (Figma Lite - Optional)
 * [ ] Build infinite canvas component with basic vector shapes, text, and connector lines
 * [ ] Create a layout inspector (adjust sizes, position, colors, alignment)
 * [ ] Implement AI Canvas Generator (describe UI layout -> AI puts wireframe blocks on canvas)
@@ -69,7 +69,7 @@ This file tracks the development process, log entries, milestones, and task chec
   * Configured local SQLite database environment (`dev.db`).
   * Defined relational schema in `prisma/schema.prisma` covering models for Documents (Wiki), Canvases, Issues (Board), and TestScenarios/Steps/Runs/RunSteps (Laboratory).
   * Built global PrismaClient helper `lib/prisma.ts`.
-  * Updated module nomenclature to official names: *The Wiki*, *Canvas*, *The Board*, and *The Laboratory*.
+  * Updated module nomenclature to official names: *The Wiki*, *The Canvas*, *The Board*, and *The Laboratory*.
 * **Global Layout & Navigation**:
   * Configured global Tailwind v4 properties, glassmorphism panel/card selectors, custom scrollbars, and helper classes in `globals.css`.
   * Created client navigation sidebar component `components/Sidebar.tsx` displaying vector icons, active state styling, and AI Context Engine dashboard cards.
