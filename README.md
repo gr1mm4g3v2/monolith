@@ -2,7 +2,7 @@
 
 **Monolith** is an AI-driven, unified software development suite designed specifically for solo developers and indie hackers. It streamlines product management, system design, documentation, and quality assurance into a single, cohesive, local-first application. 
 
-By consolidating the core capabilities of **Confluence, Figma, Jira, and qTest** into simplified, interconnected workflows, Monolith acts as your AI co-pilot, letting you build, document, track, and test your applications without the overhead of heavy enterprise tools.
+By consolidating the core capabilities of **The Wiki (Confluence), Canvas (Figma), The Board (Jira), and The Laboratory (qTest)** into simplified, interconnected workflows, Monolith acts as your AI co-pilot, letting you build, document, track, and test your applications without the overhead of heavy enterprise tools.
 
 ---
 
@@ -12,8 +12,8 @@ Monolith brings together four key pillars of software development, designed to f
 
 ```mermaid
 graph TD
-    Wiki[📝 Wiki - Confluence Lite] -->|Requirements| Board[📋 Board - Jira Lite]
-    Board -->|User Stories| Tests[🧪 Tests - qTest Lite]
+    Wiki[📝 The Wiki - Confluence Lite] -->|Requirements| Board[📋 The Board - Jira Lite]
+    Board -->|User Stories| Tests[🧪 The Laboratory - qTest Lite]
     Canvas[🎨 Canvas - Figma Lite] -->|Mockups| Board
     Canvas -->|Layouts| Wiki
     Tests -->|Failed Runs / Bugs| Board
@@ -24,7 +24,7 @@ graph TD
     style Tests fill:#16A34A,stroke:#fff,stroke-width:2px,color:#fff
 ```
 
-### 1. 📝 Wiki (Confluence Lite)
+### 1. 📝 The Wiki (Confluence Lite)
 *Structured knowledge and requirements gathering.*
 * **Manual or AI-Generated**: Write documents, product requirement docs (PRDs), or technical specifications from scratch, or prompt the AI to generate drafts for you.
 * **Review & Approve**: The AI generates documentation drafts which you can edit, reject, or approve with one click.
@@ -34,19 +34,19 @@ graph TD
 *Interactive UI/UX design and whiteboard layouts.*
 * **Simplified Elements**: Draw layouts, mockups, flowcharts, or wireframes with a clean, vector-based canvas.
 * **AI-Guided UI Generator**: Describe a component or page to the AI, and have it auto-generate layout wireframes, color schemes, or component structures directly on the Canvas.
-* **Export & Link**: Reference design frames inside Jira tasks or Wiki documentation pages.
+* **Export & Link**: Reference design frames inside Board tasks or Wiki documentation pages.
 
-### 3. 📋 Board (Jira Lite)
+### 3. 📋 The Board (Jira Lite)
 *Task, bug, and E2E test task tracking.*
 * **Project Dashboard**: Organize your work with simplified Kanban boards, lists, and backlogs.
 * **Smart Ticket Generation**: The AI analyzes your Wiki documents / PRDs and automatically breaks them down into task, bug, or epic tickets.
 * **E2E Integration**: Create E2E test tasks that map directly to functional requirements and code updates.
 
-### 4. 🧪 Tests (qTest Lite)
+### 4. 🧪 The Laboratory (qTest Lite)
 *Test scenario design and test run execution.*
-* **Requirement-to-Test Mapping**: Map test cases directly back to Jira tickets and Wiki documents to guarantee test coverage.
+* **Requirement-to-Test Mapping**: Map test cases directly back to Board tickets and Wiki documents to guarantee test coverage.
 * **AI Scenario Generator**: Tell the AI what a feature does, and it will generate detailed step-by-step manual and E2E test scenarios.
-* **Execution Runner**: Track manual test runs, log passes/fails, and automatically open a Jira bug ticket if a test scenario fails.
+* **Execution Runner**: Track manual test runs, log passes/fails, and automatically open a Board bug ticket if a test scenario fails.
 
 ---
 
@@ -55,9 +55,9 @@ graph TD
 What makes Monolith unique is its **fully integrated AI context engine**. In traditional workflows, a developer must manually copy requirements from Confluence to write Jira tickets, then read those tickets to write tests in qTest, and finally write code. 
 
 In Monolith:
-1. **Explain your feature idea** to the Wiki AI. It draft a PRD.
-2. **Accept the PRD**, and the AI suggests a list of Jira tasks and E2E test targets.
-3. **Approve the tasks**, and the Test AI populates step-by-step test scenarios in the Test Runner.
+1. **Explain your feature idea** to The Wiki AI. It drafts a PRD.
+2. **Accept the PRD**, and the AI suggests a list of tasks and E2E test targets on The Board.
+3. **Approve the tasks**, and the Test AI populates step-by-step test scenarios in The Laboratory.
 4. **Link the tickets** to your local git commits or code references for end-to-end traceability.
 
 ---
@@ -68,8 +68,9 @@ Monolith is built using modern, fast, and light web technologies optimized for l
 
 * **Framework**: [Next.js](https://nextjs.org/) (App Router, React 19, TypeScript)
 * **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
-* **Database / Storage**: Local-first architecture (Web browser localStorage / IndexedDB, or sqlite database for file-system persistency - *to be finalized during implementation*)
-* **Visuals / Canvas**: SVGs and HTML5 Canvas APIs for Figma-lite visual components.
+* **Database**: SQLite (local database file)
+* **ORM**: Prisma ORM for schema modeling and type-safe database queries
+* **Visuals / Canvas**: SVGs and HTML5 Canvas APIs for Canvas visual components.
 * **AI Core**: Local SDK configuration connecting to LLM providers (Google Gemini / Antigravity).
 
 ---
@@ -107,6 +108,6 @@ Monolith is built using modern, fast, and light web technologies optimized for l
 
 ---
 
-## 📈 Project Status
+## ⚖️ Project Status
 
 Monolith is currently in active development. Check out [DEVLOG.md](file:///home/grimmage/Projects/monolith/DEVLOG.md) to see completed milestones, what is currently in progress, and the roadmap ahead.

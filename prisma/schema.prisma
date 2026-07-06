@@ -1,0 +1,88 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Document {
+  id        String   @id @default(uuid())
+  title     String
+  content   String   // Markdown content
+  status    String   // "DRAFT", "APPROVED", "MANUALLY_EDITED", "REJECTED"
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  issues    Issue[]
+  canvases  Canvas[]
+}
+
+model Canvas {
+  id         String    @id @default(uuid())
+  name       String
+  data       String    // JSON string containing elements, shapes, positions
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  documentId String?
+  document   Document? @relation(fields: [documentId], references: [id], onDelete: SetNull)
+}
+
+model Issue {
+  id            String         @id @default(uuid())
+  title         String
+  description   String?
+  status        String         // "BACKLOG", "TODO", "IN_PROGRESS", "DONE"
+  priority      String         // "LOW", "MEDIUM", "HIGH", "URGENT"
+  type          String         // "EPIC", "TASK", "BUG", "TEST_TASK"
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  documentId    String?
+  document      Document?      @relation(fields: [documentId], references: [id], onDelete: SetNull)
+  testScenarios TestScenario[]
+  testRuns      TestRun[]      @relation("SpawnedBugs")
+}
+
+model TestScenario {
+  id          String     @id @default(uuid())
+  title       String
+  description String?
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  issueId     String?
+  issue       Issue?     @relation(fields: [issueId], references: [id], onDelete: SetNull)
+  steps       TestStep[]
+  runs        TestRun[]
+}
+
+model TestStep {
+  id             String        @id @default(uuid())
+  testScenarioId String
+  testScenario   TestScenario  @relation(fields: [testScenarioId], references: [id], onDelete: Cascade)
+  stepNumber     Int
+  instruction    String
+  expectedResult String
+  runSteps       TestRunStep[]
+}
+
+model TestRun {
+  id             String        @id @default(uuid())
+  testScenarioId String
+  testScenario   TestScenario  @relation(fields: [testScenarioId], references: [id], onDelete: Cascade)
+  status         String        // "PASSED", "FAILED", "BLOCKED"
+  notes          String?
+  executedAt     DateTime      @default(now())
+  runSteps       TestRunStep[]
+  bugId          String?       // Optional link to a bug spawned if it fails
+  bug            Issue?        @relation("SpawnedBugs", fields: [bugId], references: [id], onDelete: SetNull)
+}
+
+model TestRunStep {
+  id          String   @id @default(uuid())
+  testRunId   String
+  testRun     TestRun  @relation(fields: [testRunId], references: [id], onDelete: Cascade)
+  testStepId  String
+  testStep    TestStep @relation(fields: [testStepId], references: [id], onDelete: Cascade)
+  status      String   // "PASSED", "FAILED", "BLOCKED"
+  comment     String?
+}
